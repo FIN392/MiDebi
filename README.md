@@ -108,8 +108,5 @@ sudo apt install curl --no-install-recommends --no-install-suggests -y
 
 # Lanzar el script de configuración
 curl -sSL https://github.com/FIN392/MiDebi/raw/main/scripts/config.sh | bash
-
-# Reiniciar y despues disfrutar
-sudo reboot
 ```
 ---
