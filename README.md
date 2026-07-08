@@ -104,7 +104,7 @@ Al inicia el sistema se mostrará la terminal, identificarse con el ID de usuari
 ```bash
 sudo apt install curl --no-install-recommends --no-install-suggests -y
 
-curl -sSL https://github.com/FIN392/MiDebian/raw/main/scripts/Config.sh | bash
+curl -sSL https://github.com/FIN392/MiDebian/raw/main/scripts/config.sh | bash
 
 sudo reboot
 ```
