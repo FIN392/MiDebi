@@ -2,7 +2,7 @@
 
 Este repositorio contiene las instrucciones de instalación y configuración para mi equipo de escritorio personal.
 
-Si encuentras algo útil, genial; si no, no vengas llorándome.
+Si encuentras algo útil, genial.
 
 ---
 
