@@ -1,6 +1,21 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
-trap 'echo "ERROR: \"$BASH_COMMAND\" falló en la línea $LINENO"' ERR
+# === MANEJO DE ERRORES ===
+error_handler() {
+  local rc=$?
+  local line=$1
+  local command=$2
+  echo "========================================" >&2
+  echo "❌ ERROR en el script" >&2
+  echo "   Línea: $line" >&2
+  echo "   Comando: $command" >&2
+  echo "   Código de salida: $rc" >&2
+  echo "   Directorio: $(pwd)" >&2
+  echo "   Usuario: $(whoami)" >&2
+  echo "========================================" >&2
+  exit "$rc"
+}
+trap 'error_handler $LINENO "$BASH_COMMAND"' ERR
 
 # Evitar la instalación de paquetes recomendados y sugeridos
 echo "APT::Install-Recommends \"false\";" | sudo tee /etc/apt/apt.conf.d/98norecommends
