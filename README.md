@@ -38,7 +38,6 @@ Seleccionar *Graphical install* y seleccionar las siguientes opciones en las dif
 - Método de particionado: *Manual*
 - Particionado de discos: *(Seleccionar disco a usar)*
 - ¿Crear una nueva tabla de particiones vacía en este dispositivo?: *Si*
-- Crear una nueva tabla de particiones vacia en este dispositivo: *Si*
 
 #### Definir 4 particiones
 - *(Seleccionar 'ESPACIO LIBRE)*
