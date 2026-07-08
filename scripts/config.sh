@@ -6,12 +6,12 @@ error_handler() {
   local line=$1
   local command=$2
   echo "========================================" >&2
-  echo "❌ ERROR en el script" >&2
-  echo "   Línea: $line" >&2
-  echo "   Comando: $command" >&2
-  echo "   Código de salida: $rc" >&2
-  echo "   Directorio: $(pwd)" >&2
-  echo "   Usuario: $(whoami)" >&2
+  echo "  ERROR" >&2
+  echo "  Línea: $line" >&2
+  echo "  Comando: $command" >&2
+  echo "  Código de salida: $rc" >&2
+  echo "  Directorio: $(pwd)" >&2
+  echo "  Usuario: $(whoami)" >&2
   echo "========================================" >&2
   exit "$rc"
 }
