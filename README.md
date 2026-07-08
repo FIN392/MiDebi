@@ -107,6 +107,6 @@ Al inicia el sistema se mostrará la terminal, identificarse con el ID de usuari
 sudo apt install curl --no-install-recommends --no-install-suggests -y
 
 # Lanzar el script de configuración
-curl -sSL https://github.com/FIN392/MiDebi/raw/main/scripts/config.sh | bash
+wget -qO- https://github.com/FIN392/MiDebi/raw/main/scripts/config.sh | bash 
 ```
 ---
