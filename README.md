@@ -6,18 +6,20 @@ Si encuentras algo útil, genial.
 
 ---
 
-## 📑 Tabla de contenido
+## 📑 ¿Qué instalo?
 
-- [Instalación](#Instalación)
-- [Configuración](#Configuración)
+- Debian con una partición EFI, una EXT4 para /boot, una BTRFS para / y otra de swap
+- GNOME (lo más limpio posible)
+- Snapper (para mis snapshots)
+- Firefox, Thunderbird, Nextcloud desktop, NAPS2 y alguna otra cosa menor
 
 ---
 
 ## 📦 Instalación
 
-Lanzar la ISO de Debian mediante Ventoy, VirtualBox, ...
+Lanzar la ISO de Debian desde mi amado Ventoy.
 
-Seleccionar *Graphical install* y seguir seleccionar las siguientes opciones en las diferentes secciones de la instalación:
+Seleccionar *Graphical install* y seleccionar las siguientes opciones en las diferentes secciones de la instalación:
 
 - Language: *Spanish - Español*
 - País, territorio o área: *España*
@@ -102,10 +104,13 @@ Se reiniciará el sistema en este punto.
 
 Al inicia el sistema se mostrará la terminal, identificarse con el ID de usuario y contraseña, y ejecutar estos comandos:
 ```bash
+# Instalar curl
 sudo apt install curl --no-install-recommends --no-install-suggests -y
 
+# Lanzar el script de configuración
 curl -sSL https://github.com/FIN392/MiDebian/raw/main/scripts/config.sh | bash
 
+# Reiniciar y despues disfrutar
 sudo reboot
 ```
 ---
