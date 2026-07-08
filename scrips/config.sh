@@ -82,7 +82,7 @@ gsettings set org.gnome.shell.extensions.ding show-network-volumes true
 gnome-extensions enable ding@rastersoft.com
 
 # Instalar y configura Snapper
-curl -sSL https://github.com/FIN392/Debian/raw/main/scripts/Snapper.sh | bash
+curl -sSL https://github.com/FIN392/Debian/raw/main/scripts/snapper.sh | bash
 
 # Instalar y configura Firefox ESR
-curl -sSL https://github.com/FIN392/Debian/raw/main/scripts/Firefox.sh | bash
+curl -sSL https://github.com/FIN392/Debian/raw/main/scripts/firefox.sh | bash
