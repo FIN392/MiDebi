@@ -87,3 +87,5 @@ curl -sSL https://github.com/FIN392/MiDebi/raw/main/scripts/snapper.sh | bash
 
 # Instalar y configura Firefox ESR
 curl -sSL https://github.com/FIN392/MiDebi/raw/main/scripts/firefox.sh | bash
+
+sudo reboot
