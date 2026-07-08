@@ -33,7 +33,9 @@ sudo apt purge gnome-font-viewer -y
 sudo apt purge totem -y
 sudo apt purge simple-scan -y
 sudo apt purge loupe -y
-sudo apt autoremove -y
+sudo apt autoremove --purge -y
+sudo apt autoclean 
+sudo apt clean
 
 # Formato de ls
 echo alias ls=\'ls -l --color=auto --all --time-style=long-iso\' >> ~/.bashrc
