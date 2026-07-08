@@ -1,4 +1,4 @@
-## ℹ️ AVISO IMPORTANTE
+## ⚠️ AVISO IMPORTANTE
 
 Este repositorio contiene las instrucciones de instalación y configuración para mi equipo de escritorio personal.
 
@@ -6,7 +6,7 @@ Si encuentras algo útil, genial.
 
 ---
 
-## 📑 ¿Qué instalo?
+## ℹ️ ¿Qué instalo?
 
 - Debian con una partición EFI, una EXT4 para /boot, una BTRFS para / y otra de swap
 - GNOME (lo más limpio posible)
