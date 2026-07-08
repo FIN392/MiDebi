@@ -101,13 +101,8 @@ Se reiniciará el sistema en este punto.
 
 ## ⚙️ Configuración
 
-Al inicia el sistema se mostrará la terminal, identificarse con el ID de usuario y contraseña, y ejecutar estos comandos:
+Al inicia el sistema se mostrará la terminal, identificarse con el ID de usuario y contraseña, y ejecutar este comando:
 ```bash
-# Instalar curl
-# sudo apt install curl --no-install-recommends --no-install-suggests -y
-
-# Lanzar el script de configuración
-# curl -sSL https://github.com/FIN392/MiDebi/raw/main/scripts/config.sh | bash
 wget -O- https://github.com/FIN392/MiDebi/raw/main/scripts/config.sh | bash 
 ```
 ---
