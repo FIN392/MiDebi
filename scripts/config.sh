@@ -84,6 +84,9 @@ gsettings set org.gnome.shell.extensions.ding show-home true
 gsettings set org.gnome.shell.extensions.ding show-network-volumes true
 gnome-extensions enable ding@rastersoft.com
 
+# Instalar curl
+sudo apt install curl -y
+
 # Instalar y configura Snapper
 curl -sSL https://github.com/FIN392/MiDebi/raw/main/scripts/snapper.sh | bash
 
