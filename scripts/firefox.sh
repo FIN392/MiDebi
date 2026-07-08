@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
-trap 'echo "ERROR: \"$BASH_COMMAND\" falló en la línea $LINENO"' ERR
+trap 'rc=$?; echo "ERROR: \"$BASH_COMMAND\" falló en la línea $LINENO (código de salida: $rc)" >&2; exit "$rc"' ERR
 
 # Instalación de Firefox ESR en español (es-ES)
 
