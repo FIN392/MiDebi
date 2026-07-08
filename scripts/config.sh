@@ -6,6 +6,7 @@ echo "APT::Install-Suggests   \"false\";" | sudo tee /etc/apt/apt.conf.d/99nosug
 sudo apt update
 sudo apt full-upgrade -y
 sudo apt autoremove --purge -y
+sudo apt autoclean 
 sudo apt clean
 
 # Install GNOME con GDM3
