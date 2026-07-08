@@ -1,11 +1,7 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+trap 'echo "ERROR: \"$BASH_COMMAND\" falló en la línea $LINENO"' ERR
+
 # Instalación de Snapper
 
-# Desinstalar
-sudo apt purge firefox* -y
-sudo rm --recursive /usr/lib/firefox-esr
-sudo rm --recursive /usr/share/firefox-esr
-rm --recursive ~/.mozilla/firefox
-rm --recursive ~/.cache/mozilla/firefox
-
-# Instalar
-sudo apt install firefox-esr-l10n-es-es -y
+# ...
