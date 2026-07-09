@@ -56,10 +56,6 @@ sudo apt autoremove --purge -y
 sudo apt autoclean 
 sudo apt clean
 
-# Formato de ls
-echo alias ls=\'ls -l --color=auto --all --time-style=long-iso\' >> ~/.bashrc
-echo alias ls=\'ls -l --color=auto --all --time-style=long-iso\' | sudo tee -a /root/.bashrc
-
 # Instalar JetBrains font
 sudo apt install fonts-jetbrains-mono -y
 fc-cache -f -v
@@ -88,6 +84,10 @@ gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize
 gsettings set org.gnome.shell favorite-apps "[]"
 
 # Configurar gnome-terminal
+# Formato de ls
+echo alias ls=\'ls -l --color=auto --all --time-style=long-iso\' >> ~/.bashrc
+echo alias ls=\'ls -l --color=auto --all --time-style=long-iso\' | sudo tee -a /root/.bashrc
+# Ventana de terminal
 PROFILE_UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE_UUID/ visible-name "$USER"
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE_UUID/ use-system-font false
