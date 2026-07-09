@@ -12,7 +12,7 @@ sudo apt install snapper -y
 sudo snapper -c root create-config /
 
 # Ajustar la configuración (límites y timeline)
-snapper -c root set-config \
+sudo snapper -c root set-config \
     TIMELINE_CREATE="yes" \
     TIMELINE_CLEANUP="yes" \
     TIMELINE_LIMIT_HOURLY="24" \
