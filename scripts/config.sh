@@ -22,11 +22,7 @@ echo "APT::Install-Recommends \"false\";" | sudo tee /etc/apt/apt.conf.d/98norec
 echo "APT::Install-Suggests   \"false\";" | sudo tee /etc/apt/apt.conf.d/99nosuggests
 
 # Actualizar
-sudo apt update
-sudo apt full-upgrade -y
-sudo apt autoremove --purge -y
-sudo apt autoclean 
-sudo apt clean
+wget -O- https://github.com/FIN392/MiDebi/raw/main/scripts/updateme.sh | bash
 
 # Install GNOME con GDM3
 sudo apt install xserver-xorg-core xinit gnome-core -y
