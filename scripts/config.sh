@@ -110,6 +110,6 @@ wget -O- https://github.com/FIN392/MiDebi/raw/main/scripts/snapper.sh | bash
 wget -O- https://github.com/FIN392/MiDebi/raw/main/scripts/firefox.sh | bash
 
 # Instalar herramientas
-sudo apt install curl fastfetch   -y
+sudo apt install curl fastfetch -y
 
 sudo reboot
