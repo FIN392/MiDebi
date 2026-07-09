@@ -5,14 +5,14 @@ error_handler() {
   local rc=$?
   local line=$1
   local command=$2
-  echo "========================================" >&2
+  echo -e "\e[31m========================================" >&2
   echo "  ERROR" >&2
   echo "  Línea: $line" >&2
   echo "  Comando: $command" >&2
   echo "  Código de salida: $rc" >&2
   echo "  Directorio: $(pwd)" >&2
   echo "  Usuario: $(whoami)" >&2
-  echo "========================================" >&2
+  echo -e "========================================\e[0m" >&2
   exit "$rc"
 }
 trap 'error_handler $LINENO "$BASH_COMMAND"' ERR
