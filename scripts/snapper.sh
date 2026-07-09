@@ -26,3 +26,4 @@ sudo snapper -c root set-config \
 
 # Crear un snapshot manual de prueba
 sudo snapper -c root create --description "Snapshot inicial"
+sudo snapper -c root list
