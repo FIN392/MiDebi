@@ -24,6 +24,9 @@ echo "APT::Install-Suggests   \"false\";" | sudo tee /etc/apt/apt.conf.d/99nosug
 # Actualizar
 wget -O- https://github.com/FIN392/MiDebi/raw/main/scripts/updateme.sh | bash
 
+# Instalar y configura Snapper
+wget -O- https://github.com/FIN392/MiDebi/raw/main/scripts/snapper.sh | bash
+
 # Install GNOME con GDM3
 sudo apt install xserver-xorg-core xinit gnome-core -y
 
@@ -98,9 +101,6 @@ gsettings set org.gnome.shell.extensions.ding show-trash true
 gsettings set org.gnome.shell.extensions.ding show-home true
 gsettings set org.gnome.shell.extensions.ding show-network-volumes true
 gnome-extensions enable ding@rastersoft.com
-
-# Instalar y configura Snapper
-wget -O- https://github.com/FIN392/MiDebi/raw/main/scripts/snapper.sh | bash
 
 # Instalar y configura Firefox ESR
 wget -O- https://github.com/FIN392/MiDebi/raw/main/scripts/firefox.sh | bash
