@@ -36,19 +36,15 @@ echo "APT::Install-Suggests   \"false\";" | sudo tee /etc/apt/apt.conf.d/99nosug
 print_section "ACTUALIZANDO EL SISTEMA"
 wget -O- https://github.com/FIN392/MiDebi/raw/main/scripts/updateme.sh | bash
 
-# Instalar y configura Snapper
-print_section "INSTALANDO SNAPPER"
-wget -O- https://github.com/FIN392/MiDebi/raw/main/scripts/snapper.sh | bash
+# Optimización de Discos (SSD) y CPUs de AMD
+print_section "OPTIMIZACIONES DEL SISTEMA"
+sudo systemctl enable --now fstrim.timer
+sudo apt install amd64-microcode -y
 
 # Install GNOME con GDM3
 print_section "INSTALANDO GNOME"
 sudo apt install xserver-xorg-core xinit gnome-core -y
 sudo systemctl set-default graphical.target
-
-# Optimización de Discos (SSD) y CPUs de AMD
-print_section "OPTIMIZACIONES DEL SISTEMA"
-sudo systemctl enable --now fstrim.timer
-sudo apt install amd64-microcode -y
 
 # Eliminar software
 print_section "ELIMINANDO SOFTWARE INNECESARIO"
@@ -124,6 +120,10 @@ gnome-extensions enable dash-to-panel@jderose9.github.com
 # Instalar y configura Firefox ESR
 print_section "INSTALANDO FIREFOX ESR"
 wget -O- https://github.com/FIN392/MiDebi/raw/main/scripts/firefox.sh | bash
+
+# Instalar y configura Snapper
+print_section "INSTALANDO SNAPPER"
+wget -O- https://github.com/FIN392/MiDebi/raw/main/scripts/snapper.sh | bash
 
 # Instalar herramientas
 print_section "INSTALANDO HERRAMIENTAS ADICIONALES"
