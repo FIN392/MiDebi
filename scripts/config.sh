@@ -104,11 +104,6 @@ gsettings set org.gnome.desktop.interface clock-format '24h'
 gsettings set org.gnome.desktop.interface clock-show-date true
 # Botones en ventanas
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
-# Quitar aplicaciones del tablero
-gsettings set org.gnome.shell favorite-apps "[]"
-# Ordenar la cuadrícula de aplicaciones
-gsettings set org.gnome.desktop.app-folders folder-children "[]"
-gsettings reset org.gnome.shell app-picker-layout
 # Iconos en escritorio
 sudo apt install gnome-shell-extension-desktop-icons-ng -y
 gsettings set org.gnome.shell.extensions.ding show-volumes true
@@ -116,6 +111,11 @@ gsettings set org.gnome.shell.extensions.ding show-trash true
 gsettings set org.gnome.shell.extensions.ding show-home true
 gsettings set org.gnome.shell.extensions.ding show-network-volumes true
 gnome-extensions enable ding@rastersoft.com
+# Quitar aplicaciones del tablero
+gsettings set org.gnome.shell favorite-apps "[]"
+# Ordenar la cuadrícula de aplicaciones
+gsettings set org.gnome.desktop.app-folders folder-children "[]"
+gsettings reset org.gnome.shell app-picker-layout
 # Dash to panel
 sudo apt install gnome-shell-extension-dash-to-panel -y
 #...
