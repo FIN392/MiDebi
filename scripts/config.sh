@@ -87,8 +87,8 @@ gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profi
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE_UUID/ default-size-columns 132
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE_UUID/ default-size-rows 43
 
-# Configurar GNOME
-print_section "CONFIGURANDO GNOME"
+# Configurar escritorio
+print_section "CONFIGURANDO ESCRITORIO"
 # Fuente por defecto
 gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono 12'
 gsettings set org.gnome.desktop.interface document-font-name 'JetBrains Mono 12'
