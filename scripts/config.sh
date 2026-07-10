@@ -41,6 +41,7 @@ sudo apt install amd64-microcode -y
 
 # Eliminar software
 sudo apt purge gnome-software -y
+sudo apt purge gnome-tour -y
 sudo apt purge gnome-calendar -y
 sudo apt purge gnome-characters -y
 sudo apt purge gnome-contacts -y
