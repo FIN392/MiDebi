@@ -114,7 +114,7 @@ gnome-extensions enable ding@rastersoft.com
 # Quitar aplicaciones del tablero
 gsettings set org.gnome.shell favorite-apps "[]"
 # Ordenar la cuadrícula de aplicaciones
-gsettings set org.gnome.desktop.app-folders folder-children "[]"
+gsettings set org.gnome.desktop.app-folders folder-children "['']"
 gsettings reset org.gnome.shell app-picker-layout
 # Dash to panel
 sudo apt install gnome-shell-extension-dash-to-panel -y
