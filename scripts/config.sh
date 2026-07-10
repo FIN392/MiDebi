@@ -116,6 +116,10 @@ gsettings set org.gnome.shell.extensions.ding show-trash true
 gsettings set org.gnome.shell.extensions.ding show-home true
 gsettings set org.gnome.shell.extensions.ding show-network-volumes true
 gnome-extensions enable ding@rastersoft.com
+# Dash to panel
+sudo apt install gnome-shell-extension-dash-to-panel -y
+#...
+gnome-extensions enable dash-to-panel@jderose9.github.com
 
 # Instalar y configura Firefox ESR
 print_section "INSTALANDO FIREFOX ESR"
