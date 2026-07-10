@@ -60,6 +60,18 @@ sudo apt clean
 sudo apt install fonts-jetbrains-mono -y
 fc-cache -f -v
 
+# Configurar gnome-terminal
+# Formato de ls
+echo alias ls=\'ls -l --color=auto --all --time-style=long-iso\' >> ~/.bashrc
+echo alias ls=\'ls -l --color=auto --all --time-style=long-iso\' | sudo tee -a /root/.bashrc
+# Ventana de terminal
+PROFILE_UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE_UUID/ visible-name "$USER"
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE_UUID/ use-system-font false
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE_UUID/ font 'JetBrains Mono 12'
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE_UUID/ default-size-columns 132
+gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE_UUID/ default-size-rows 43
+
 # Fuente por defecto
 gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono 12'
 gsettings set org.gnome.desktop.interface document-font-name 'JetBrains Mono 12'
@@ -83,17 +95,9 @@ gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize
 # Quitar aplicaciones del tablero
 gsettings set org.gnome.shell favorite-apps "[]"
 
-# Configurar gnome-terminal
-# Formato de ls
-echo alias ls=\'ls -l --color=auto --all --time-style=long-iso\' >> ~/.bashrc
-echo alias ls=\'ls -l --color=auto --all --time-style=long-iso\' | sudo tee -a /root/.bashrc
-# Ventana de terminal
-PROFILE_UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
-gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE_UUID/ visible-name "$USER"
-gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE_UUID/ use-system-font false
-gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE_UUID/ font 'JetBrains Mono 12'
-gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE_UUID/ default-size-columns 132
-gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE_UUID/ default-size-rows 43
+# Ordenar la cuadrícula de aplicaciones
+gsettings set org.gnome.desktop.app-folders folder-children "[]"
+gsettings reset org.gnome.shell app-picker-layout
 
 # Iconos en escritorio
 sudo apt install gnome-shell-extension-desktop-icons-ng -y
