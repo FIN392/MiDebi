@@ -36,8 +36,8 @@ echo "APT::Install-Suggests   \"false\";" | sudo tee /etc/apt/apt.conf.d/99nosug
 print_section "ACTUALIZANDO EL SISTEMA"
 wget -O- https://github.com/FIN392/MiDebi/raw/main/scripts/updateme.sh | bash
 
-# Optimización de Discos (SSD) y CPUs de AMD
-print_section "OPTIMIZACIONES DEL SISTEMA"
+# Optimización de hardware
+print_section "OPTIMIZACIONES HARDWARE"
 sudo systemctl enable --now fstrim.timer
 sudo apt install amd64-microcode -y
 
@@ -113,9 +113,11 @@ gsettings set org.gnome.shell favorite-apps "[]"
 gsettings set org.gnome.desktop.app-folders folder-children "['']"
 gsettings reset org.gnome.shell app-picker-layout
 # Dash to panel
-sudo apt install gnome-shell-extension-dash-to-panel -y
-#...
-gnome-extensions enable dash-to-panel@jderose9.github.com
+sudo apt install gnome-shell-extension-dashtodock -y
+# ...
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'LEFT'
+# ...
+gnome-extensions enable gnome-shell-extension-dashtodock -y
 
 # Instalar y configura Firefox ESR
 print_section "INSTALANDO FIREFOX ESR"
