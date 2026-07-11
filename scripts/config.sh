@@ -103,8 +103,8 @@ gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize
 # Iconos en escritorio
 sudo apt install gnome-shell-extension-desktop-icons-ng -y
 gsettings set org.gnome.shell.extensions.ding show-volumes true
-gsettings set org.gnome.shell.extensions.ding show-trash true
-gsettings set org.gnome.shell.extensions.ding show-home true
+gsettings set org.gnome.shell.extensions.ding show-trash false
+gsettings set org.gnome.shell.extensions.ding show-home false
 gsettings set org.gnome.shell.extensions.ding show-network-volumes true
 gnome-extensions enable ding@rastersoft.com
 # Quitar aplicaciones del tablero
@@ -114,10 +114,9 @@ gsettings set org.gnome.desktop.app-folders folder-children "['']"
 gsettings reset org.gnome.shell app-picker-layout
 # Dash to panel
 sudo apt install gnome-shell-extension-dashtodock -y
-# ...
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'LEFT'
-# ...
-gnome-extensions enable gnome-shell-extension-dashtodock -y
+gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
+gnome-extensions enable dash-to-dock@micxgx.gmail.com
 
 # Instalar y configura Firefox ESR
 print_section "INSTALANDO FIREFOX ESR"
