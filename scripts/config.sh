@@ -100,6 +100,11 @@ gsettings set org.gnome.desktop.interface clock-format '24h'
 gsettings set org.gnome.desktop.interface clock-show-date true
 # Botones en ventanas
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
+# Quitar aplicaciones del tablero
+gsettings set org.gnome.shell favorite-apps "[]"
+# Ordenar la cuadrícula de aplicaciones
+gsettings set org.gnome.desktop.app-folders folder-children "['']"
+gsettings reset org.gnome.shell app-picker-layout
 # Iconos en escritorio
 sudo apt install gnome-shell-extension-desktop-icons-ng -y
 gsettings set org.gnome.shell.extensions.ding show-volumes true
@@ -107,16 +112,15 @@ gsettings set org.gnome.shell.extensions.ding show-trash false
 gsettings set org.gnome.shell.extensions.ding show-home false
 gsettings set org.gnome.shell.extensions.ding show-network-volumes true
 gnome-extensions enable ding@rastersoft.com
-# Quitar aplicaciones del tablero
-gsettings set org.gnome.shell favorite-apps "[]"
-# Ordenar la cuadrícula de aplicaciones
-gsettings set org.gnome.desktop.app-folders folder-children "['']"
-gsettings reset org.gnome.shell app-picker-layout
 # Dash to panel
 sudo apt install gnome-shell-extension-dashtodock -y
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'LEFT'
 gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
 gnome-extensions enable dash-to-dock@micxgx.gmail.com
+# Tiling Shell
+wget -O tilingshell.zip "https://extensions.gnome.org/download-extension/tilingshell@ferrarodomenico.com.shell-extension.zip?version_tag=70233"
+gnome-extensions install --force tilingshell.zip
+gnome-extensions enable tilingshell@ferrarodomenico.com
 
 # Instalar y configura Firefox ESR
 print_section "INSTALANDO FIREFOX ESR"
