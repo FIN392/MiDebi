@@ -32,9 +32,6 @@ print_section "CONFIGURANDO APT"
 echo "APT::Install-Recommends \"false\";" | sudo tee /etc/apt/apt.conf.d/98norecommends
 echo "APT::Install-Suggests   \"false\";" | sudo tee /etc/apt/apt.conf.d/99nosuggests
 
-# Instalar curl
-sudo apt install curl -y
-
 # Actualizar
 print_section "ACTUALIZANDO EL SISTEMA"
 curl -sSL https://github.com/FIN392/MiDebi/raw/main/scripts/updateme.sh | bash
