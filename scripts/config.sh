@@ -32,9 +32,12 @@ print_section "CONFIGURANDO APT"
 echo "APT::Install-Recommends \"false\";" | sudo tee /etc/apt/apt.conf.d/98norecommends
 echo "APT::Install-Suggests   \"false\";" | sudo tee /etc/apt/apt.conf.d/99nosuggests
 
+# Instalar curl
+sudo apt install curl -y
+
 # Actualizar
 print_section "ACTUALIZANDO EL SISTEMA"
-wget -O- https://github.com/FIN392/MiDebi/raw/main/scripts/updateme.sh | bash
+curl -sSL https://github.com/FIN392/MiDebi/raw/main/scripts/updateme.sh | bash
 
 # Optimización de hardware
 print_section "OPTIMIZACIONES HARDWARE"
@@ -118,21 +121,21 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'LEFT'
 gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
 gnome-extensions enable dash-to-dock@micxgx.gmail.com
 # Tiling Shell
-wget -O tilingshell.zip "https://extensions.gnome.org/download-extension/tilingshell@ferrarodomenico.com.shell-extension.zip?version_tag=70233"
+curl -L -o tilingshell.zip "https://extensions.gnome.org/download-extension/tilingshell@ferrarodomenico.com.shell-extension.zip?version_tag=70233"
 gnome-extensions install --force tilingshell.zip
 gnome-extensions enable tilingshell@ferrarodomenico.com
 
 # Instalar y configura Firefox ESR
 print_section "INSTALANDO FIREFOX ESR"
-wget -O- https://github.com/FIN392/MiDebi/raw/main/scripts/firefox.sh | bash
+curl -sSL https://github.com/FIN392/MiDebi/raw/main/scripts/firefox.sh | bash
 
 # Instalar y configura Snapper
 print_section "INSTALANDO SNAPPER"
-wget -O- https://github.com/FIN392/MiDebi/raw/main/scripts/snapper.sh | bash
+curl -sSL https://github.com/FIN392/MiDebi/raw/main/scripts/snapper.sh | bash
 
 # Instalar herramientas
 print_section "INSTALANDO HERRAMIENTAS ADICIONALES"
-sudo apt install curl fastfetch -y
+sudo apt install fastfetch -y
 
 # Reboot
 print_section "REINICIANDO EL SISTEMA"
