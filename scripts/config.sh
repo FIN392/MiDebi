@@ -121,6 +121,7 @@ gnome-extensions enable dash-to-dock@micxgx.gmail.com
 curl -L -o tilingshell.zip "https://extensions.gnome.org/download-extension/tilingshell@ferrarodomenico.com.shell-extension.zip?version_tag=70233"
 gnome-extensions install --force tilingshell.zip
 gnome-extensions enable tilingshell@ferrarodomenico.com
+rm --force tilingshell.zip
 
 # Instalar y configura Firefox ESR
 print_section "INSTALANDO FIREFOX ESR"
