@@ -117,11 +117,10 @@ sudo apt install gnome-shell-extension-dashtodock -y
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'LEFT'
 gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
 gnome-extensions enable dash-to-dock@micxgx.gmail.com
-# Tiling Shell
-curl -L -o /tmp/tilingshell.zip "https://extensions.gnome.org/download-extension/tilingshell@ferrarodomenico.com.shell-extension.zip?version_tag=70233"
-gnome-extensions install --force /tmp/tilingshell.zip
-gnome-extensions enable tilingshell@ferrarodomenico.com
-rm --force /tmp/tilingshell.zip
+
+# Instalar y configurar Tiling Shell
+print_section "INSTALANDO TILING SHELL"
+curl -sSL https://github.com/FIN392/MiDebi/raw/main/scripts/tilingshell.sh | bash
 
 # Instalar y configura Firefox ESR
 print_section "INSTALANDO FIREFOX ESR"
