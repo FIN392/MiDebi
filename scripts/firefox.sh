@@ -6,6 +6,7 @@ trap 'rc=$?; echo "ERROR: \"$BASH_COMMAND\" falló en la línea $LINENO (código
 
 # Desinstalar
 sudo apt purge firefox* -y
+sudo apt autoremove -y
 sudo rm --force --recursive /usr/lib/firefox-esr
 sudo rm --force --recursive /usr/share/firefox-esr
 rm --force --recursive ~/.mozilla/firefox
