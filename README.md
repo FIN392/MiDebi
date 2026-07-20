@@ -11,7 +11,7 @@ Si encuentras algo útil, genial.
 - Debian con una partición EFI, una EXT4 para /boot, una BTRFS para / y otra de swap
 - GNOME (lo más limpio posible)
 - Snapper (para mis snapshots)
-- Firefox, Thunderbird, Nextcloud desktop, NAPS2 y alguna otra cosa menor
+- Firefox
 
 ---
 
