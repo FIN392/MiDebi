@@ -57,6 +57,9 @@ sudo tee "/usr/lib/firefox-esr/distribution/policies.json" > /dev/null << 'JSON'
         "installation_mode": "force_installed",
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi"
       }
+    },
+    "SecurityDevices": {
+      "System CA Trust": "/usr/lib/x86_64-linux-gnu/pkcs11/p11-kit-trust.so"
     }
   }
 }
