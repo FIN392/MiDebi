@@ -23,38 +23,46 @@ pref("general.config.obscure_value", 0);
 EOF
 sudo tee "/usr/lib/firefox-esr/firefox.cfg" > /dev/null << 'EOF'
 // Mi configuración de Firefox
-defaultPref("app.shield.optoutstudies.enabled", false);
 defaultPref("app.normandy.enabled", false);
 defaultPref("app.normandy.first_run", false);
 defaultPref("app.normandy.last_seen_buildid", 0);
+defaultPref("app.shield.optoutstudies.enabled", false);
+defaultPref("beacon.enabled", false);
 defaultPref("browser.aboutwelcome.enabled", false);
-defaultPref("browser.newtabpage.activity-stream.feeds.discoverystreamfeed", false);
-defaultPref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
-defaultPref("browser.newtabpage.activity-stream.feeds.snippets", false);
-defaultPref("browser.newtabpage.activity-stream.feeds.topsites", false);
-defaultPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "DuckDuckGo");
-defaultPref("browser.newtabpage.activity-stream.showSearch", true);
-defaultPref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
-defaultPref("browser.newtabpage.activity-stream.showWeather", false);
 defaultPref("browser.ml.chat.enabled", false);
 defaultPref("browser.ml.chat.enabledByDefault", false);
 defaultPref("browser.ml.chatprovider.enabled", false);
+defaultPref("browser.ml.enable", false);
 defaultPref("browser.ml.enabled", false);
-defaultPref("browser.ml.suggestions.enabled", false);
 defaultPref("browser.ml.featureGate", false);
+defaultPref("browser.ml.suggestions.enabled", false);
+defaultPref("browser.newtabpage.activity-stream.feeds.discoverystreamfeed", false);
+defaultPref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
+defaultPref("browser.newtabpage.activity-stream.feeds.snippets", false);
+defaultPref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+defaultPref("browser.newtabpage.activity-stream.feeds.topsites", false);
+defaultPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines", "DuckDuckGo");
+defaultPref("browser.newtabpage.activity-stream.showSearch", true);
+defaultPref("browser.newtabpage.activity-stream.showSponsored", false);
+defaultPref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
+defaultPref("browser.newtabpage.activity-stream.showWeather", false);
+defaultPref("browser.newtabpage.activity-stream.telemetry", false);
 defaultPref("browser.pocket.enabled", false);
 defaultPref("browser.rights.3.shown", true);
 defaultPref("browser.search.defaultenginename", "DuckDuckGo");
 defaultPref("browser.search.selectedEngine", "DuckDuckGo");
+defaultPref("browser.search.serpEventTelemetryCategorization.enabled", false);
 defaultPref("browser.tabs.crashReporting.sendReport", false);
 defaultPref("browser.translations.neverTranslateLanguages", "en,en-US,en-GB");
+defaultPref("browser.urlbar.suggest.trending", false);
+defaultPref("browser.urlbar.suggest.weather", false);
+defaultPref("browser.urlbar.suggest.yelp", false);
+defaultPref("datareporting.healthreport.service.enabled", false);
+defaultPref("datareporting.healthreport.uploadEnabled", false);
+defaultPref("datareporting.policy.dataSubmissionEnabled", false);
 defaultPref("layers.acceleration.force-enabled", true);
 defaultPref("signon.rememberSignons", false);
-defaultPref("toolkit.telemetry.enabled", false);
 defaultPref("toolkit.telemetry.unified", false);
-defaultPref("datareporting.healthreport.uploadEnabled", false);
-defaultPref("datareporting.healthreport.service.enabled", false);
-defaultPref("datareporting.policy.dataSubmissionEnabled", false);
 EOF
 sudo mkdir -p /usr/lib/firefox-esr/distribution
 sudo tee "/usr/lib/firefox-esr/distribution/policies.json" > /dev/null << 'JSON'
