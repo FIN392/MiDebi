@@ -23,6 +23,10 @@ pref("general.config.obscure_value", 0);
 EOF
 sudo tee "/usr/lib/firefox-esr/firefox.cfg" > /dev/null << 'EOF'
 // Mi configuración de Firefox
+defaultPref("app.shield.optoutstudies.enabled", false);
+defaultPref("app.normandy.enabled", false);
+defaultPref("app.normandy.first_run", false);
+defaultPref("app.normandy.last_seen_buildid", 0);
 defaultPref("browser.aboutwelcome.enabled", false);
 defaultPref("browser.newtabpage.activity-stream.feeds.discoverystreamfeed", false);
 defaultPref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
@@ -32,6 +36,12 @@ defaultPref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShort
 defaultPref("browser.newtabpage.activity-stream.showSearch", true);
 defaultPref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
 defaultPref("browser.newtabpage.activity-stream.showWeather", false);
+defaultPref("browser.ml.chat.enabled", false);
+defaultPref("browser.ml.chat.enabledByDefault", false);
+defaultPref("browser.ml.chatprovider.enabled", false);
+defaultPref("browser.ml.enabled", false);
+defaultPref("browser.ml.suggestions.enabled", false);
+defaultPref("browser.ml.featureGate", false);
 defaultPref("browser.pocket.enabled", false);
 defaultPref("browser.rights.3.shown", true);
 defaultPref("browser.search.defaultenginename", "DuckDuckGo");
@@ -57,22 +67,25 @@ sudo tee "/usr/lib/firefox-esr/distribution/policies.json" > /dev/null << 'JSON'
     "SearchEngines": {
       "Default": "DuckDuckGo"
     },
+    "AppNormandy": {  "Enabled": false },
     "ExtensionSettings": {
       "uBlock0@raymondhill.net": {
         "installation_mode": "force_installed",
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi"
       }
     },
-    "SecurityDevices": {
-      "System CA Trust": "/usr/lib/x86_64-linux-gnu/pkcs11/p11-kit-trust.so"
-    },
+    "SecurityDevices": { "System CA Trust": "/usr/lib/x86_64-linux-gnu/pkcs11/p11-kit-trust.so" },
     "AIControls": {
       "Default": { "Value": "blocked", "Locked": true },
       "Translations": { "Value": "blocked", "Locked": true },
       "PDFAltText": { "Value": "blocked", "Locked": true },
       "SmartTabGroups": { "Value": "blocked", "Locked": true },
       "LinkPreviewKeyPoints": { "Value": "blocked", "Locked": true },
-      "SidebarChatbot": { "Value": "blocked", "Locked": true }
+      "SidebarChatbot": { "Value": "blocked", "Locked": true },
+      "Chatbot": { "Value": "blocked", "Locked": true },
+      "Summarization": { "Value": "blocked", "Locked": true },
+      "WritingSuggestions": { "Value": "blocked", "Locked": true },
+      "AutofillSuggestions": { "Value": "blocked", "Locked": true }      
     }
   }
 }
