@@ -5,12 +5,18 @@ trap 'rc=$?; echo "ERROR: \"$BASH_COMMAND\" falló en la línea $LINENO (código
 # Instalación de Firefox ESR en español (es-ES)
 
 # Desinstalar
-sudo apt purge firefox* -y
-sudo apt autoremove -y
-sudo rm --force --recursive /usr/lib/firefox-esr
-sudo rm --force --recursive /usr/share/firefox-esr
-rm --force --recursive ~/.mozilla/firefox
-rm --force --recursive ~/.cache/mozilla/firefox
+sudo apt purge "firefox*" -y || true
+sudo apt autoremove --purge -y
+sudo rm --force --recursive /usr/lib/firefox*
+sudo rm --force --recursive /usr/share/firefox*
+sudo rm --force --recursive /etc/firefox*
+sudo rm --force --recursive /usr/share/applications/firefox*.desktop
+rm --force --recursive ~/.mozilla
+rm --force --recursive ~/.cache/mozilla
+sudo rm --force --recursive /home/*/.mozilla
+sudo rm --force --recursive /home/*/.cache/mozilla
+sudo rm --force --recursive /root/.mozilla
+sudo rm --force --recursive /root/.cache/mozilla
 
 # Instalar
 sudo apt install firefox-esr-l10n-es-es -y
@@ -25,7 +31,15 @@ EOF
 
 # 2. Crear archivo firefox.cfg (Endurecimiento de Privacidad y Telemetría)
 sudo tee "/usr/lib/firefox-esr/firefox.cfg" > /dev/null << 'EOF'
-// Configuración de Privacidad y Telemetría para Firefox ESR
+// Configuración Unificada de Privacidad, Telemetría e IA para Firefox ESR
+
+// Página de Inicio / Home
+defaultPref("browser.startup.homepage", "https://start.duckduckgo.com/");
+defaultPref("browser.startup.page", 1);
+
+// Motores de Búsqueda
+defaultPref("browser.search.defaultenginename", "DuckDuckGo");
+defaultPref("browser.search.selectedEngine", "DuckDuckGo");
 
 // Telemetría General y Reportes de Salud
 defaultPref("toolkit.telemetry.enabled", false);
@@ -77,6 +91,7 @@ defaultPref("browser.ml.enable", false);
 defaultPref("browser.ml.chat.enabled", false);
 defaultPref("browser.ml.chatprovider.enabled", false);
 defaultPref("browser.ml.suggestions.enabled", false);
+defaultPref("pdfjs.altText.enabled", false);
 
 // Preferencias varias de usuario y seguridad
 defaultPref("browser.rights.3.shown", true);
@@ -90,36 +105,11 @@ sudo mkdir -p /usr/lib/firefox-esr/distribution
 sudo tee "/usr/lib/firefox-esr/distribution/policies.json" > /dev/null << 'JSON'
 {
   "policies": {
-    "DisableTelemetry": true,
-    "DisableAppUpdate": true,
-    "DisableFirefoxStudies": true,
-    "DisableFeedbackCommands": true,
-    "DisablePocket": true,
-    "OverrideFirstRunPage": "",
-    "OverridePostUpdatePage": "",
-    "SearchEngines": {
-      "Default": "DuckDuckGo"
-    },
     "ExtensionSettings": {
       "uBlock0@raymondhill.net": {
         "installation_mode": "force_installed",
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi"
       }
-    },
-    "SecurityDevices": {
-      "System CA Trust": "/usr/lib/x86_64-linux-gnu/pkcs11/p11-kit-trust.so"
-    },
-    "AIControls": {
-      "Default": { "Value": "blocked", "Locked": true },
-      "Translations": { "Value": "blocked", "Locked": true },
-      "PDFAltText": { "Value": "blocked", "Locked": true },
-      "SmartTabGroups": { "Value": "blocked", "Locked": true },
-      "LinkPreviewKeyPoints": { "Value": "blocked", "Locked": true },
-      "SidebarChatbot": { "Value": "blocked", "Locked": true },
-      "Chatbot": { "Value": "blocked", "Locked": true },
-      "Summarization": { "Value": "blocked", "Locked": true },
-      "WritingSuggestions": { "Value": "blocked", "Locked": true },
-      "AutofillSuggestions": { "Value": "blocked", "Locked": true }
     }
   }
 }
