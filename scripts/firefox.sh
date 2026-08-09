@@ -38,17 +38,20 @@ defaultPref("browser.search.defaultenginename", "DuckDuckGo");
 defaultPref("browser.search.selectedEngine", "DuckDuckGo");
 defaultPref("browser.tabs.crashReporting.sendReport", false);
 defaultPref("browser.translations.neverTranslateLanguages", "en,en-US,en-GB");
-defaultPref("datareporting.healthreport.uploadEnabled", false);
 defaultPref("layers.acceleration.force-enabled", true);
 defaultPref("signon.rememberSignons", false);
 defaultPref("toolkit.telemetry.enabled", false);
+defaultPref("toolkit.telemetry.unified", false);
+defaultPref("datareporting.healthreport.uploadEnabled", false);
+defaultPref("datareporting.healthreport.service.enabled", false);
+defaultPref("datareporting.policy.dataSubmissionEnabled", false);
 EOF
 sudo mkdir -p /usr/lib/firefox-esr/distribution
 sudo tee "/usr/lib/firefox-esr/distribution/policies.json" > /dev/null << 'JSON'
 {
   "policies": {
     "DisableTelemetry": true,
-    "DisableAppUpdate": true,
+    "DisableAppUpdate": true,    
     "DisableFirefoxStudies": true,
     "OverrideFirstRunPage": "",
     "SearchEngines": {
