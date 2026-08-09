@@ -47,6 +47,7 @@ sudo mkdir -p /usr/lib/firefox-esr/distribution
 sudo tee "/usr/lib/firefox-esr/distribution/policies.json" > /dev/null << 'JSON'
 {
   "policies": {
+    "DisableTelemetry": true,
     "DisableAppUpdate": true,
     "DisableFirefoxStudies": true,
     "OverrideFirstRunPage": "",
@@ -61,6 +62,14 @@ sudo tee "/usr/lib/firefox-esr/distribution/policies.json" > /dev/null << 'JSON'
     },
     "SecurityDevices": {
       "System CA Trust": "/usr/lib/x86_64-linux-gnu/pkcs11/p11-kit-trust.so"
+    },
+    "AIControls": {
+      "Default": { "Value": "blocked", "Locked": true },
+      "Translations": { "Value": "blocked", "Locked": true },
+      "PDFAltText": { "Value": "blocked", "Locked": true },
+      "SmartTabGroups": { "Value": "blocked", "Locked": true },
+      "LinkPreviewKeyPoints": { "Value": "blocked", "Locked": true },
+      "SidebarChatbot": { "Value": "blocked", "Locked": true }
     }
   }
 }
