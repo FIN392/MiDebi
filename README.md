@@ -9,9 +9,10 @@ Si encuentras algo útil, genial.
 ## ℹ️ ¿Qué instalo?
 
 - Debian con una partición EFI, una EXT4 para /boot, una BTRFS para / y otra de swap
-- GNOME (lo más limpio posible)
-- Snapper (para mis snapshots)
-- Firefox
+- GNOME pero sin mucho del bloatware que incluye
+- Tiling Shell (by domferr) para ajustar las ventanas
+- Snapper para mis snapshots
+- Firefox configurado maximizando la privacidad
 
 ---
 
