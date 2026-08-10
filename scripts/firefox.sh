@@ -4,19 +4,22 @@ trap 'rc=$?; echo "ERROR: \"$BASH_COMMAND\" falló en la línea $LINENO (código
 
 # Instalación de Firefox ESR en español (es-ES)
 
-# Desinstalar
+# Cierra
+sudo pkill -TERM firefox || true
+sleep 3s
+sudo pkill -KILL firefox || true
+# Desinstala
 sudo apt purge "firefox*" -y || true
 sudo apt autoremove --purge -y
+# Elimina configuración
 sudo rm --force --recursive /usr/lib/firefox*
 sudo rm --force --recursive /usr/share/firefox*
 sudo rm --force --recursive /etc/firefox*
 sudo rm --force --recursive /usr/share/applications/firefox*.desktop
 rm --force --recursive ~/.mozilla
 rm --force --recursive ~/.cache/mozilla
-sudo rm --force --recursive /home/*/.mozilla
-sudo rm --force --recursive /home/*/.cache/mozilla
-sudo rm --force --recursive /root/.mozilla
-sudo rm --force --recursive /root/.cache/mozilla
+sudo rm --force --recursive ~/.mozilla
+sudo rm --force --recursive ~/.cache/mozilla
 
 # Instalar
 sudo apt install firefox-esr-l10n-es-es -y
@@ -54,7 +57,6 @@ defaultPref("breakpad.reportURL", "");
 // Normandy y Estudios (Shield)
 defaultPref("app.normandy.enabled", false);
 defaultPref("app.normandy.first_run", false);
-defaultPref("app.normandy.last_seen_buildid", 0);
 defaultPref("app.shield.optoutstudies.enabled", false);
 
 // Pings de red y API Beacon
