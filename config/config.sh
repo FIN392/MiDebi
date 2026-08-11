@@ -27,6 +27,9 @@ print_section() {
 
 # === MAIN ===
 
+# Directorio actual
+DIR_ACTUAL="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # Evitar la instalación de paquetes recomendados y sugeridos
 print_section "CONFIGURANDO APT"
 echo "APT::Install-Recommends \"false\";" | sudo tee /etc/apt/apt.conf.d/98norecommends
@@ -34,7 +37,7 @@ echo "APT::Install-Suggests   \"false\";" | sudo tee /etc/apt/apt.conf.d/99nosug
 
 # Actualizar
 print_section "ACTUALIZANDO EL SISTEMA"
-curl -sSL https://github.com/FIN392/MiDebi/raw/main/scripts/updateme.sh | bash
+bash "$DIR_ACTUAL/updateme.sh"
 
 # Optimización de hardware
 print_section "OPTIMIZACIONES HARDWARE"
@@ -120,19 +123,15 @@ gnome-extensions enable dash-to-dock@micxgx.gmail.com
 
 # Instalar y configurar Tiling Shell
 print_section "INSTALANDO TILING SHELL"
-curl -sSL https://github.com/FIN392/MiDebi/raw/main/scripts/tilingshell.sh | bash
+bash "$DIR_ACTUAL/tilingshell.sh"
 
 # Instalar y configura Firefox ESR
 print_section "INSTALANDO FIREFOX ESR"
-curl -sSL https://github.com/FIN392/MiDebi/raw/main/scripts/firefox.sh | bash
+bash "$DIR_ACTUAL/firefox.sh"
 
 # Instalar y configura Snapper
 print_section "INSTALANDO SNAPPER"
-curl -sSL https://github.com/FIN392/MiDebi/raw/main/scripts/snapper.sh | bash
-
-# Instalar herramientas
-print_section "INSTALANDO HERRAMIENTAS ADICIONALES"
-sudo apt install fastfetch -y
+bash "$DIR_ACTUAL/snapper.sh"
 
 # Reboot
 print_section "REINICIANDO EL SISTEMA"
