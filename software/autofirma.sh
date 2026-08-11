@@ -13,7 +13,7 @@ sudo apt autoremove -y || true
 sudo apt install default-jre -y
 curl -L -o /tmp/autofirma.zip "https://firmaelectronica.gob.es/content/dam/firmaelectronica/descargas-software/autofirma19/Autofirma_Linux_Debian.zip"
 python3 -m zipfile -e /tmp/autofirma.zip /tmp/
-sudo apt install ./autofirma_1_9.deb -y
+sudo apt install /tmp/autofirma_1_9.deb -y
 
 # Instalar certificados y despues...
 # sudo update-ca-certificates
