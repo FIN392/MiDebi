@@ -5,9 +5,9 @@ trap 'rc=$?; echo "ERROR: \"$BASH_COMMAND\" falló en la línea $LINENO (código
 # Instalación de Autofirma (Gobierno de España)
 
 # Desinstalar
-sudo apt purge default-jre -y
-sudo apt purge autofirma* -y
-sudo apt autoremove -y
+sudo apt purge default-jre -y || true
+sudo apt purge autofirma* -y || true
+sudo apt autoremove -y || true
 
 # Instalar
 sudo apt install default-jre -y
