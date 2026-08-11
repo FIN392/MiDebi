@@ -104,8 +104,8 @@ Se reiniciará el sistema en este punto.
 
 Al inicia el sistema se mostrará la terminal, identificarse con el ID de usuario y contraseña, y ejecutar estos comandos:
 ```bash
-# sudo apt install curl --no-install-recommends --no-install-suggests -y
-# curl -sSL https://github.com/FIN392/MiDebi/raw/main/scripts/config.sh | bash
-# HACERLO CON GIT
+sudo apt install git --no-install-recommends --no-install-suggests -y
+git clone https://github.com/FIN392/MiDebi
+bash MiDebi/config/config.sh
 ```
 ---
