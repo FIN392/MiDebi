@@ -121,6 +121,12 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'LEFT'
 gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
 gnome-extensions enable dash-to-dock@micxgx.gmail.com
 
+# Eliminar directorios innecesarios
+rm --force --recursive ~/Imágenes/
+rm --force --recursive ~/Música/
+rm --force --recursive ~/Público/
+rm --force --recursive ~/Vídeos/
+
 # Instalar curl
 sudo apt install curl -y
 
