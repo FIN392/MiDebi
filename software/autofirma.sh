@@ -19,16 +19,16 @@ sudo apt install /tmp/autofirma_1_9.deb -y
 # sudo update-ca-certificates
 
 # Configurar
-cat << 'EOF' > /tmp/autofirma_config.afconfig
-<?xml version="1.0" encoding="UTF-8"?>
-<plist version="1.0">
-    <dict>
-        <key>padesVisibleStamp</key><true/>
-        <key>default.locale</key><string>es_ES</string>
-        <key>padesVisibleSignature</key><true/>
-    </dict>
-</plist>
-EOF
+# cat << 'EOF' > /tmp/autofirma_config.afconfig
+# <?xml version="1.0" encoding="UTF-8"?>
+# <plist version="1.0">
+#     <dict>
+#         <key>padesVisibleStamp</key><true/>
+#         <key>default.locale</key><string>es_ES</string>
+#         <key>padesVisibleSignature</key><true/>
+#     </dict>
+# </plist>
+# EOF
 
 # Herremientas / Preferencias / Importar configuración
 #     /tmp/autofirma_config.afconfig
