@@ -121,6 +121,9 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'LEFT'
 gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
 gnome-extensions enable dash-to-dock@micxgx.gmail.com
 
+# Instalar curl
+sudo apt install curl -y
+
 # Instalar y configurar Tiling Shell
 print_section "INSTALANDO TILING SHELL"
 bash "$DIR_ACTUAL/tilingshell.sh"
