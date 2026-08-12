@@ -2,14 +2,14 @@
 set -Eeuo pipefail
 trap 'rc=$?; echo "ERROR: \"$BASH_COMMAND\" falló en la línea $LINENO (código de salida: $rc)" >&2; exit "$rc"' ERR
 
-# Instalación de ......
+# Instalación de Brave Origin
 
 # Desinstalar
 sudo apt purge ...... -y
 sudo apt autoremove -y
 
 # Instalar
-sudo apt install ...... -y
+curl -fsS https://dl.brave.com/install.sh | FLAVOR=origin sh
 
 # Configurar
 # ......
