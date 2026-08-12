@@ -5,7 +5,7 @@ trap 'rc=$?; echo "ERROR: \"$BASH_COMMAND\" falló en la línea $LINENO (código
 # Instalación de Brave Origin
 
 # Desinstalar
-sudo apt purge brave* -y || true
+sudo apt purge "brave*" -y || true
 sudo apt autoremove -y
 rm -R ~/.config/BraveSoftware/
 
