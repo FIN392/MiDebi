@@ -13,5 +13,5 @@ rm -R ~/.config/BraveSoftware/
 curl -fsS https://dl.brave.com/install.sh | FLAVOR=origin sh
 
 # Configurar
-# ...
+# ... ~/.config/BraveSoftware
 
