@@ -6,7 +6,8 @@
             "left": 1
         },
         "color": {
-            "1": "red"
+            "1": "red",
+            "2": "red"
         }
     },
     "modules": [
