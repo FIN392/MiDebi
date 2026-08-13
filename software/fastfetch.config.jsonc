@@ -18,44 +18,44 @@
         },
         {
             "type": "host",
-            "key": " Host",
+            "key": " Host ",
             "keyColor": "green"
         },
         {
             "type": "cpu",
-            "key": " CPU",
+            "key": " CPU ",
             "keyColor": "green",
             "showPeCoreCount": true,
             "temp": true
         },
         {
             "type": "gpu",
-            "key": " GPU",
+            "key": " GPU ",
             "keyColor": "green"
         },
         {
             "type": "memory",
-            "key": " Memory",
+            "key": " Memory ",
             "keyColor": "green"
         },
         {
             "type": "swap",
-            "key": " Swap",
+            "key": " Swap ",
             "keyColor": "green"
         },
         {
             "type": "disk",
-            "key": " Disk",
+            "key": " Disk ",
             "keyColor": "green"
         },
         {
             "type": "display",
-            "key": " Display",
+            "key": " Display ",
             "keyColor": "green"
         },
         {
             "type": "sound",
-            "key": " Sound",
+            "key": " Sound ",
             "keyColor": "green"
         },
         {
@@ -69,52 +69,52 @@
         },
         {
             "type": "bios",
-            "key": " BIOS",
+            "key": " BIOS ",
             "keyColor": "yellow"
         },
         {
             "type": "os",
-            "key": " OS",
+            "key": " OS ",
             "keyColor": "yellow"
         },
         {
             "type": "kernel",
-            "key": " Kernel",
+            "key": " Kernel ",
             "keyColor": "yellow"
         },
         {
             "type": "shell",
-            "key": " Shell",
+            "key": " Shell ",
             "keyColor": "yellow"
         },
         {
             "type": "de",
-            "key": " Desktop Environment",
+            "key": " Desktop Environment ",
             "keyColor": "yellow"
         },
         {
             "type": "lm",
-            "key": " Login Manager",
+            "key": " Login Manager ",
             "keyColor": "yellow"
         },
         {
             "type": "wm",
-            "key": " Windows Manager",
+            "key": " Windows Manager ",
             "keyColor": "yellow"
       	},
         {
             "type": "wmtheme",
-            "key": " Windows Manager Theme",
+            "key": " Windows Manager Theme ",
             "keyColor": "yellow"
         },
         {
             "type": "terminal",
-            "key": " Terminal",
+            "key": " Terminal ",
             "keyColor": "yellow"
         },
         {
             "type": "packages",
-            "key": " Packages",
+            "key": " Packages ",
             "keyColor": "yellow"
         },
         {
