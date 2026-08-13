@@ -14,5 +14,4 @@ rm -rf ~/.config/BraveSoftware/
 curl -fsS https://dl.brave.com/install.sh | FLAVOR=origin sh
 
 # Configurar
-# cp ....
-
+cp -f "$DIR_ACTUAL/brave.Preferences" "$HOME/.config/BraveSoftware/Brave-Origin/Default/Preferences"
