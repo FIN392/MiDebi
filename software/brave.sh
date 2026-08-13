@@ -14,5 +14,5 @@ rm -rf ~/.config/BraveSoftware/
 curl -fsS https://dl.brave.com/install.sh | FLAVOR=origin sh
 
 # Configurar
-# tar -czvf "$HOME/BraveSoftware.tar.gz" -C "$HOME/.config" BraveSoftware
-tar -xzvf "$DIR_ACTUAL/BraveSoftware.tar.gz" -C "$HOME/.config"
+# cp ....
+
