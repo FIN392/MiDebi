@@ -15,5 +15,5 @@ sudo apt install fastfetch -y
 
 # Configurar
 fastfetch --gen-config
-cp "$DIR_ACTUAL/fastfetch.config.config.jsonc" "~/.config/fastfetch/config.jsonc"
+cp "$DIR_ACTUAL/fastfetch.config.jsonc" "~/.config/fastfetch/config.jsonc"
 
