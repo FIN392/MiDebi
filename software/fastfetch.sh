@@ -8,7 +8,7 @@ DIR_ACTUAL="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Desinstalar
 sudo apt purge "fastfetch*" -y || true
 sudo apt autoremove -y
-rm -R ~/.config/fastfetch/
+rm -rf ~/.config/fastfetch/
 
 # Instalar
 sudo apt install fastfetch -y
