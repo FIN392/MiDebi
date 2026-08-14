@@ -78,6 +78,7 @@ rm --force --recursive ~/Imágenes/
 rm --force --recursive ~/Música/
 rm --force --recursive ~/Público/
 rm --force --recursive ~/Vídeos/
+ls -d --color=never */
 
 # Instalar JetBrains font
 print_section "INSTALANDO FUENTES JETBRAINS MONO"
