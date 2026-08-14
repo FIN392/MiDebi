@@ -105,8 +105,18 @@ print_section "INSTALANDO SNAPPER"
 bash "$DIR_ACTUAL/snapper.sh"
 
 # Reboot
-print_section "REINICIANDO EL SISTEMA"
-echo -e "\e[32m✅ Script completado con éxito. El sistema se reiniciará en 5 segundos...\e[0m"
-echo -e "\e[33m⚠️  Presiona Ctrl+C para cancelar el reinicio\e[0m"
-sleep 5
-sudo reboot
+print_section "FIN DE LA CONFIGURACION"
+echo -e "\e[32m✅ La configuración se ha completado con éxito.\e[0m"
+
+# Preguntar al usuario si desea reiniciar
+read -p ""\e[33m⚠️ ¿Deseas reiniciar el sistema ahora? (s/N): \e[0m" respuesta
+
+case "$respuesta" in
+    [sS]|[sS][iI]|[yY]|[yY][eE][sS])
+        echo "Reiniciando el sistema..."
+        sudo reboot
+        ;;
+    *)
+        echo "Operación finalizada. No se reiniciará el sistema."
+        ;;
+esac
