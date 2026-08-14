@@ -39,11 +39,6 @@ echo "APT::Install-Suggests   \"false\";" | sudo tee /etc/apt/apt.conf.d/99nosug
 print_section "ACTUALIZANDO EL SISTEMA"
 bash "$DIR_ACTUAL/updateme.sh"
 
-# Optimización de hardware
-print_section "OPTIMIZACIONES HARDWARE"
-sudo systemctl enable --now fstrim.timer
-sudo apt install amd64-microcode -y
-
 # Install GNOME con GDM3
 print_section "INSTALANDO GNOME"
 sudo apt install xserver-xorg-core xinit gnome-core -y
@@ -68,6 +63,34 @@ sudo apt purge -y \
 sudo apt autoremove --purge -y
 sudo apt autoclean 
 sudo apt clean
+
+# Optimización de hardware
+print_section "OPTIMIZACIONES HARDWARE"
+        
+        # A: Gestión de microcódigo y planificador AMD Zen 3
+        sudo systemctl enable --now fstrim.timer
+        sudo apt install amd64-microcode -y
+        sudo apt install firmware-linux-nonfree -y
+        # AMD P-State Driver
+        #   > cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_driver
+        #   Debe ser 'amd-pstate-epp', si no cambiar en GRUB
+        # Daemon Power-Profiles / TLP / GameMode:
+        #   > systemctl status power-profiles-daemon
+        #   Lo correcto: Deberías ver un texto en verde que indica active (running).
+        #   > powerprofilesctl
+        #   Te mostrará una lista con los tres perfiles (performance, balanced, power-saver).
+        #   El perfil que tiene un asterisco * o aparece marcado como CpuDriver es el que está seleccionado actualmente.
+        
+        # B: Sensores y monitorización de temperaturas para Asus Nuvoton y ASUS X570
+        sudo apt install lm-sensors
+        sudo sensors-detect --auto
+        echo "nct6775" | sudo tee -a /etc/modules
+        
+        # C: Ajustes E/S de Almacenamiento y Swap (NVMe / SSD)
+        # Reducir la agresividad del swap editando /etc/sysctl.conf:
+        #   vm.swappiness=10
+        #   vm.vfs_cache_pressure=50
+        # Asegurar el programador de I/O adecuado para discos NVMe (none o kyber).
 
 # Instalar herramientas básicas
 print_section "INSTALANDO HERRAMIENTAS"
