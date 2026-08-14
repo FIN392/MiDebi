@@ -51,26 +51,29 @@ sudo systemctl set-default graphical.target
 
 # Eliminar software
 print_section "ELIMINANDO SOFTWARE INNECESARIO"
-sudo apt purge gnome-software -y
-sudo apt purge gnome-tour -y
-sudo apt purge gnome-calendar -y
-sudo apt purge gnome-characters -y
-sudo apt purge gnome-contacts -y
-sudo apt purge gnome-weather -y
-sudo apt purge gnome-maps -y
-sudo apt purge gnome-clocks -y
-sudo apt purge gnome-connections -y
-sudo apt purge gnome-font-viewer -y
-sudo apt purge totem -y
-sudo apt purge simple-scan -y
-sudo apt purge loupe -y
+sudo apt purge -y \
+  gnome-software \
+  gnome-tour \
+  gnome-calendar \
+  gnome-characters \
+  gnome-contacts \
+  gnome-weather \
+  gnome-maps \
+  gnome-clocks \
+  gnome-connections \
+  gnome-font-viewer \
+  totem \
+  simple-scan \
+  loupe
 sudo apt autoremove --purge -y
 sudo apt autoclean 
 sudo apt clean
 
 # Instalar herramientas básicas
 print_section "INSTALANDO HERRAMIENTAS"
-sudo apt install curl jq -y
+sudo apt install -y \
+  curl \
+  jq
 
 # Eliminar directorios innecesarios
 print_section "ELIMINANDO DIRECTORIOS INNECESARIOS"
@@ -78,7 +81,7 @@ rm --force --recursive ~/Imágenes/
 rm --force --recursive ~/Música/
 rm --force --recursive ~/Público/
 rm --force --recursive ~/Vídeos/
-ls -d --color=never */
+\ls --width=1
 
 # Instalar JetBrains font
 print_section "INSTALANDO FUENTES JETBRAINS MONO"
