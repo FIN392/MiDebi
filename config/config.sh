@@ -119,7 +119,6 @@ print_section "FIN DE LA CONFIGURACION"
 read -e -p $'\e[33m\u26a0 ¿Deseas reiniciar el sistema ahora? (s/N): \e[0m' respuesta
 case "$respuesta" in
     [sS]|[sS][iI]|[yY]|[yY][eE][sS])
-        echo -e "\e[33m\u26a0 Reiniciando el sistema..."
         sudo reboot
         ;;
     *)
