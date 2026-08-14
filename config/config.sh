@@ -102,7 +102,13 @@ bash "$DIR_ACTUAL/firefox.sh"
 
 # Instalar y configura Snapper
 print_section "INSTALANDO SNAPPER"
-bash "$DIR_ACTUAL/snapper.sh"
+FSTYPE=$(findmnt -n -o FSTYPE /)
+if [ "$FSTYPE" = "btrfs" ]; then
+  bash "$DIR_ACTUAL/snapper.sh"
+else
+    echo -e "\e[33m⚠️ No se instala Snapper. La partición / no usa Btrfs (formato detectado: $FSTYPE).\e[0m"
+    sleep 3
+fi
 
 # Reboot
 print_section "FIN DE LA CONFIGURACION"
