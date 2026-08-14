@@ -75,9 +75,10 @@ print_section "OPTIMIZACIONES HARDWARE"
         #   > cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_driver
         #   Debe ser 'amd-pstate-epp', si no cambiar en GRUB
         # Daemon Power-Profiles
-        sudo apt install power-profiles-daemon -y
-        sudo systemctl enable --now power-profiles-daemon
-        powerprofilesctl set performance
+        # CAMBIAR POR TUNED-PPD
+        # sudo apt install power-profiles-daemon -y
+        # sudo systemctl enable --now power-profiles-daemon
+        # powerprofilesctl set performance
 
         #  # 1. Ajustar el perfil global a alto rendimiento
         #  powerprofilesctl set performance
@@ -108,6 +109,11 @@ print_section "OPTIMIZACIONES HARDWARE"
         #   cat /sys/block/nvme0n1/queue/scheduler
         # El resultado mostrará algo similar a esto:
         #   [none] mq-deadline kyber bfq
+
+        # Añadir amd_pstate en GRUB
+        # sudo nano /etc/default/grub
+        # ...."quiet amd_pstate=active"
+        # sudo update-grub
 
 # Instalar herramientas básicas
 print_section "INSTALANDO HERRAMIENTAS"
