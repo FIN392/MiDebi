@@ -116,17 +116,13 @@ fi
 
 # Reboot
 print_section "FIN DE LA CONFIGURACION"
-echo -e "\e[32m\u2139 La configuración se ha completado con éxito.\e[0m"
-
-# Preguntar al usuario si desea reiniciar
-read -p "\e[33m\u26a0 ¿Deseas reiniciar el sistema ahora? (s/N): \e[0m" respuesta
-
+read -e -p $'\e[33m\u26a0 ¿Deseas reiniciar el sistema ahora? (s/N): \e[0m' respuesta
 case "$respuesta" in
     [sS]|[sS][iI]|[yY]|[yY][eE][sS])
         echo -e "\e[33m\u26a0 Reiniciando el sistema..."
         sudo reboot
         ;;
     *)
-        echo -e "\e[36m\u2139 Operación finalizada. No se reiniciará el sistema.\e[0m"
+        echo -e "\e[36m\u2139 Configuración finalizada.\e[0m"
         ;;
 esac
