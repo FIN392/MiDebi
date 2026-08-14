@@ -68,6 +68,17 @@ sudo apt autoremove --purge -y
 sudo apt autoclean 
 sudo apt clean
 
+# Instalar herramientas básicas
+print_section "INSTALANDO HERRAMIENTAS"
+sudo apt install curl jq -y
+
+# Eliminar directorios innecesarios
+print_section "ELIMINANDO DIRECTORIOS INNECESARIOS"
+rm --force --recursive ~/Imágenes/
+rm --force --recursive ~/Música/
+rm --force --recursive ~/Público/
+rm --force --recursive ~/Vídeos/
+
 # Instalar JetBrains font
 print_section "INSTALANDO FUENTES JETBRAINS MONO"
 sudo apt install fonts-jetbrains-mono -y
@@ -120,15 +131,6 @@ sudo apt install gnome-shell-extension-dashtodock -y
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'LEFT'
 gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
 gnome-extensions enable dash-to-dock@micxgx.gmail.com
-
-# Eliminar directorios innecesarios
-rm --force --recursive ~/Imágenes/
-rm --force --recursive ~/Música/
-rm --force --recursive ~/Público/
-rm --force --recursive ~/Vídeos/
-
-# Instalar curl
-sudo apt install curl -y
 
 # Instalar y configurar Tiling Shell
 print_section "INSTALANDO TILING SHELL"
