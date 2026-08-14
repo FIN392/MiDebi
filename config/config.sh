@@ -57,6 +57,7 @@ sudo apt purge -y \
   gnome-clocks \
   gnome-connections \
   gnome-font-viewer \
+  gnome-disk-utility \
   totem \
   simple-scan \
   loupe
@@ -119,7 +120,10 @@ print_section "OPTIMIZACIONES HARDWARE"
 print_section "INSTALANDO HERRAMIENTAS"
 sudo apt install -y \
   curl \
-  jq
+  jq \
+  gedit \
+  gparted \
+  htop
 
 # Eliminar directorios innecesarios
 print_section "ELIMINANDO DIRECTORIOS INNECESARIOS"
