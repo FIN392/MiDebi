@@ -1,8 +1,13 @@
+#!/usr/bin/env bash
+set -Eeuo pipefail
+trap 'rc=$?; echo "ERROR: \"$BASH_COMMAND\" falló en la línea $LINENO (código de salida: $rc)" >&2; exit "$rc"' ERR
+
 # Configurar gnome-terminal
-print_section "CONFIGURANDO TERMINAL"
+
 # Formato de ls
 echo alias ls=\'ls -l --color=auto --all --time-style=long-iso\' >> ~/.bashrc
 echo alias ls=\'ls -l --color=auto --all --time-style=long-iso\' | sudo tee -a /root/.bashrc
+
 # Ventana de terminal
 PROFILE_UUID=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$PROFILE_UUID/ visible-name "$USER"
