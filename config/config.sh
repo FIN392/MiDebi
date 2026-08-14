@@ -86,7 +86,7 @@ rm --force --recursive ~/Vídeos/
 # Instalar JetBrains font
 print_section "INSTALANDO FUENTES JETBRAINS MONO"
 sudo apt install fonts-jetbrains-mono -y
-fc-cache -f -v
+fc-cache -f
 
 # Configurar gnome-terminal
 print_section "CONFIGURANDO TERMINAL"
@@ -110,16 +110,16 @@ FSTYPE=$(findmnt -n -o FSTYPE /)
 if [ "$FSTYPE" = "btrfs" ]; then
   bash "$DIR_ACTUAL/snapper.sh"
 else
-    echo -e "\e[33m⚠️ No se instala Snapper. La partición / no usa Btrfs (formato detectado: $FSTYPE).\e[0m"
+    echo -e "\e[33m\u26a0 No se instala Snapper. La partición / no usa Btrfs (formato detectado: $FSTYPE).\e[0m"
     sleep 3
 fi
 
 # Reboot
 print_section "FIN DE LA CONFIGURACION"
-echo -e "\e[32m✅ La configuración se ha completado con éxito.\e[0m"
+echo -e "\e[32m\u2139 La configuración se ha completado con éxito.\e[0m"
 
 # Preguntar al usuario si desea reiniciar
-read -p ""\e[33m⚠️ ¿Deseas reiniciar el sistema ahora? (s/N): \e[0m" respuesta
+read -p "\e[33m\u26a0 ¿Deseas reiniciar el sistema ahora? (s/N): \e[0m" respuesta
 
 case "$respuesta" in
     [sS]|[sS][iI]|[yY]|[yY][eE][sS])
