@@ -116,7 +116,7 @@ fi
 
 # Reboot
 print_section "FIN DE LA CONFIGURACION"
-echo -e "\e[32m\u2139 La configuración se ha completado con éxito.\e[0m"
+echo -e "\e[32m\u2714 La configuración se ha completado con éxito.\e[0m"
 
 # Preguntar al usuario si desea reiniciar
 read -p "\e[33m\u26a0 ¿Deseas reiniciar el sistema ahora? (s/N): \e[0m" respuesta
