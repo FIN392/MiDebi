@@ -119,6 +119,7 @@ print_section "OPTIMIZACIONES HARDWARE"
 # Instalar herramientas básicas
 print_section "INSTALANDO HERRAMIENTAS"
 sudo apt install -y \
+  dconf-editor \
   curl \
   jq \
   gparted \
