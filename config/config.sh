@@ -121,7 +121,6 @@ print_section "INSTALANDO HERRAMIENTAS"
 sudo apt install -y \
   curl \
   jq \
-  gedit \
   gparted \
   htop
 
