@@ -134,3 +134,10 @@ sudo tee "/usr/lib/firefox-esr/distribution/policies.json" > /dev/null << 'EOF'
   }
 }
 EOF
+
+# Primer inicio: abre y cierra
+firefox
+sleep 5s
+sudo pkill -TERM firefox || true
+sleep 5s
+sudo pkill -KILL firefox || true
