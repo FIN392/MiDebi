@@ -79,8 +79,8 @@ Seleccionar *Graphical install* y seleccionar las siguientes opciones en las dif
 | :----: | ------: | :------------ | :--------------- |
 |   #1   |  512 MB | ESP           |                  |
 |   #2   |  512 MB | ext4          | /boot            |
-|   #3   | 9999 GB | btrfs         | /                |
-|   #4   |   16 GB | intercambio   | intercambio      |
+|   #3   |   16 GB | intercambio   | intercambio      |
+|   #4   | 9999 GB | btrfs         | /                |
 
 - *Finalizar el particionado y escribir los cambios en el disco*
 - ¿Desea escribir los cambios en los discos?: *Si*
