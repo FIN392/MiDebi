@@ -36,13 +36,13 @@ EOF
 sudo tee "/usr/lib/firefox-esr/firefox.cfg" > /dev/null << 'EOF'
 // Configuración Unificada de Privacidad, Telemetría e IA para Firefox ESR
 
-// Página de Inicio / Home
-defaultPref("browser.startup.homepage", "https://start.duckduckgo.com/");
-defaultPref("browser.startup.page", 1);
-
 // Motores de Búsqueda
 defaultPref("browser.search.defaultenginename", "DuckDuckGo");
 defaultPref("browser.search.selectedEngine", "DuckDuckGo");
+
+// Página de Inicio / Home
+defaultPref("browser.startup.homepage", "https://start.duckduckgo.com/");
+defaultPref("browser.startup.page", 1);
 
 // Telemetría General y Reportes de Salud
 defaultPref("toolkit.telemetry.enabled", false);
