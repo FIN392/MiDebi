@@ -62,7 +62,7 @@ Seleccionar *Graphical install* y seleccionar las siguientes opciones en las dif
 - *(Seleccionar 'ESPACIO LIBRE)*
 - Cómo usar este espacio libre: *Crear una partición nueva*
 - Nuevo tamaño de partición: *16 GB*
-- Ubicación de la nueva partición: *Final*
+- Ubicación de la nueva partición: *Principio*
 - Configuración de la partición:
   * Utilizar como: *área de intercambio*
 - *Se ha terminado de definir la partición*
