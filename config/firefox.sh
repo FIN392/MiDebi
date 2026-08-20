@@ -27,7 +27,7 @@ sudo apt install firefox-esr-l10n-es-es -y
 # Configurar
 # 1. Configurar la llamada a firefox.cfg
 sudo mkdir -p /usr/lib/firefox-esr/defaults/pref
-sudo tee "/usr/lib/firefox-esr/defaults/pref/local-settings.js" > /dev/null << 'EOF'
+sudo tee "/usr/lib/firefox-esr/defaults/pref/autoconfig.js" > /dev/null << 'EOF'
 pref("general.config.filename", "firefox.cfg");
 pref("general.config.obscure_value", 0);
 EOF
@@ -35,10 +35,6 @@ EOF
 # 2. Crear archivo firefox.cfg (Endurecimiento de Privacidad y Telemetría)
 sudo tee "/usr/lib/firefox-esr/firefox.cfg" > /dev/null << 'EOF'
 // Configuración Unificada de Privacidad, Telemetría e IA para Firefox ESR
-
-// Motores de Búsqueda
-defaultPref("browser.search.defaultenginename", "DuckDuckGo");
-defaultPref("browser.search.selectedEngine", "DuckDuckGo");
 
 // Página de Inicio / Home
 defaultPref("browser.startup.homepage", "https://start.duckduckgo.com/");
@@ -104,7 +100,7 @@ EOF
 
 # 3. Crear archivo policies.json (Políticas a nivel de Enterprise)
 sudo mkdir -p /usr/lib/firefox-esr/distribution
-sudo tee "/usr/lib/firefox-esr/distribution/policies.json" > /dev/null << 'JSON'
+sudo tee "/usr/lib/firefox-esr/distribution/policies.json" > /dev/null << 'EOF'
 {
   "policies": {
     "ExtensionSettings": {
@@ -112,7 +108,14 @@ sudo tee "/usr/lib/firefox-esr/distribution/policies.json" > /dev/null << 'JSON'
         "installation_mode": "force_installed",
         "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi"
       }
+    },
+    "SearchEngines": {
+      "Default": "DuckDuckGo",
+      "Remove": [
+        "Google",
+        "Bing"
+      ]
     }
   }
 }
-JSON
+EOF
