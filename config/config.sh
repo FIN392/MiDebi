@@ -99,7 +99,7 @@ print_section "OPTIMIZACIONES HARDWARE"
         sudo sensors-detect --auto
         sudo apt install psensor -y
         echo "nct6775" | sudo tee /etc/modules-load.d/nct6775.conf
-        sudo modprobe nct6775
+        sudo modprobe nct6775 || true 
         lsmod | grep nct6775
         
         # C: Ajustes E/S de Almacenamiento y Swap (NVMe / SSD)
