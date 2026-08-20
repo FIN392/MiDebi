@@ -22,7 +22,7 @@ sudo rm --force --recursive ~/.mozilla
 sudo rm --force --recursive ~/.cache/mozilla
 
 # Instalar
-sudo apt install firefox-esr-l10n-es-es -y
+sudo apt install firefox-esr firefox-esr-l10n-es-es -y
 
 # Configurar
 # 1. Configurar la llamada a firefox.cfg
